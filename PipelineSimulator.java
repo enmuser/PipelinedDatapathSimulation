@@ -59,8 +59,8 @@ public class PipelineSimulator {
 		int[] instruction_cache = {0xA1020000, 0x810AFFFC, 0x00831820, 0x01263820, 0x01224820, 0x81180000, 0x81510010, 0x00624022,
 		              0x00000000, 0x00000000, 0x00000000, 0x00000000};
 		
-		//Test values in the detailed example:
-		//int[] test = {0x00A63820, 0x8D0F0004, 0xAD09FFFC, 0x00625022, 0x10C8FFFB, 0x00000000, 0x00000000, 0x00000000, 0x00000000};
+		//A different set of test values
+		//int[] instruction_cache = {0x00A63820, 0x8D0F0004, 0xAD09FFFC, 0x00625022, 0x10C8FFFB, 0x00000000, 0x00000000, 0x00000000, 0x00000000};
 		
 		for (int i = 0; i < instruction_cache.length; i++) {
 			System.out.println("///////////////////");
@@ -73,6 +73,7 @@ public class PipelineSimulator {
 			MEM_stage(EXMEM, MEMWB, Main_mem);
 			WB_stage(MEMWB, Regs);
 			
+			//To print out everything before pipeline register data is copied from the write to the read side.
 			System.out.println("\nBefore we copy the write side of pipeline registers to the read side");
 			System.out.println("--------------------------------------------------------------------");
 			Print_out_everything(IFID, IDEX, EXMEM, MEMWB, Regs, Main_mem);
@@ -228,7 +229,7 @@ public class PipelineSimulator {
 			lowerInput = IDEX.readSEOffset();
 		}
 		
-		//Determining how to calculate  via ALUOp
+		//Determining how to calculate via ALUOp
 		int tfunct = 0; 
 		
 		if (IDEX.readALUOp() == 0b00) { //I-Format 
