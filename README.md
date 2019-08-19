@@ -1,4 +1,4 @@
-# PipelineDatapathSimulation
+# Pipelined Datapath Simulation
 
 This is a software simulation of a pipelined data path. This simulation does not handle hazards and do not consider branches. 
 Unlike actual pipeline registers, this simulation models the registers as Java objects that hold a “write” and a “read” 
