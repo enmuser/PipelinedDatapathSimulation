@@ -7,11 +7,22 @@ The “write” version of the attribute is populated as needed, but is only cop
 clock cycle.
 
 The 5 stages of a RISC pipeline:
-1. IF:  Instruction fetch
-2. ID:  Instruction decode
-3. EX:  Instruction execute
-4. MEM: Memory Access
-5. WB:  Write back
+  1. IF:  Instruction fetch
+  2. ID:  Instruction decode
+  3. EX:  Instruction execute
+  4. MEM: Memory Access
+  5. WB:  Write back
+
+The 9 MIPS instructions accounted for in this simulation:
+  1. add (addition)
+  2. sub (subtraction)
+  3. and (bitwise AND)
+  4. or (bitwise OR)
+  5. slt (set on less than)
+  6. lw (load)
+  7. sw (store)
+  8. bne (branch not equal)
+  9. beq (branch on equal)
 
 ///////////////////////////////////
 
